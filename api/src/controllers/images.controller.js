@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
 const unplashs = require('unsplash-js');
+const { Favorites } = require("../db");
+
 
 URL = require('url').URL;
 
@@ -33,38 +35,24 @@ const searchImages = (req, res) => {
 }
 
 // Agrega una imagen a favoritos
-const addImages = (req, res) => {
-    if (!req.body.url) {
-        res.status(400).send({ message: "No hay imagen" })
-    } else {
-        var image = req.body.url;
-        res.status(200).json({ image: image });
-    }
+ const addImages = async  (req, res) => {
+	if (!req.body.url) {
+		res.status(400).send({ message: "No hay imagen" });
+	} else {
+		var url = req.body.url;
+		await Favorites.create({
+			url: url,
+		});
+		res.status(200).json({ message: "Imagen agregada correctamente" });
+	}
+ };
 
+const imagesFav = async (req, res) => {
+    var favorites = await Favorites.findAll();
+    res.status(200).send({ images: favorites })
 }
 
-const imagesFav = (req, res) => {
-    // localStorage.setItem("titulo", "Curso de Angular avanzado - Víctor Robles");
-    res.status(200).send({ message: "ok" })
-}
 
-// const addCollection = (req, res) => {
-//     const title = req.query.title;
-//     const description = req.query.description;
-//     unsplash.search.collections({
-//         title: "Favoritas",
-//         description: "imagenes favoritas",
-//     }).then(result => {
-//         if (result.errors) {
-//             // handle error here
-//             res.status(400).send({ message: result.errors })
-//         } else {
-//             // handle success here
-//             const photo = result.response;
-//             res.status(200).send(photo);
-//         }
-//     });
-// }
 
 module.exports = {
     searchImages,
