@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
-import { NavLink } from "react-router-dom";
-import Cards from "../Card/Card";
+import React, {useState} from "react";
+import Cards from "../Card/Cards";
 import { getAllImages } from "../../Services/images";
-// import NavBar from "../NavBar/NavBar.jsx";
+import NavBar from "../NavBar/NavBar.jsx";
 
 import "./Home.css";
 export default function Home() {
@@ -12,9 +11,6 @@ export default function Home() {
 
 	var perPage = 6;
 
-	async function searchImages(query, page, perPage) {
-		var image = await getAllImages(query, page, perPage);
-	}
 
 	const handleInputChange = (event) => {
 		setQuery({
@@ -38,12 +34,12 @@ export default function Home() {
 		const imagen = await getAllImages(text, page, perPage);
 		setImagenes([...imagenes, imagen.results]);
 	}
-		
 
+	
 
 	return (
 		<>
-			{/* <NavBar /> */}
+			<NavBar />
 			<div className="contenedor">
 				<div className="titulo">
 					<form className="row" onSubmit={sendQuery}>
@@ -54,27 +50,38 @@ export default function Home() {
 								className="form-control"
 								onChange={handleInputChange}
 								name="query"
+								style={{ border: "black 1px solid" }}
 							></input>
 						</div>
-						<button type="submit" className="btn btn-primary">
-							Enviar
+						<button
+							type="submit"
+							className="btn btn-primary"
+							style={{ backgroundColor: "#96eada" }}
+						>
+							Buscar
 						</button>
 					</form>
 					<div className="conten-images">
 						<div className="imagen">
-							{
-							
-								imagenes && imagenes.map((r) => (
-									(r.map((e) => (
-										<Cards url={e.urls.full} />									
-									)))
-								))}
-							
+							{imagenes &&
+								imagenes.map((r) => r.map((e) => <Cards url={e.urls.full} />))}
 						</div>
 					</div>
-					<button type="submit" className="btn btn-primary" onClick={upload}>
-						Cargar Mas
-					</button>
+					<div className="cargar">
+						<button
+							type="submit"
+							className="btn btn-primary"
+							onClick={upload}
+							style={{
+								width: "85px",
+								heigth: "20px",
+								borderRadius: "9px",
+								backgroundColor: "#96eada",
+							}}
+						>
+							Cargar Mas
+						</button>
+					</div>
 				</div>
 			</div>
 		</>

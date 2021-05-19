@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: #b7bcdc;
+    opacity: 0.9;
+    display: flex;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
+
+.lista {
+  display: flex;
+  color:rgb(238, 217, 217);
+}
+
+nav {
+  color: aquas;
+}
+p {
+  display: flex;
+  margin-left: 1em;
+  color: aqua;
+}
+
+
