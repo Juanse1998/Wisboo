@@ -6,14 +6,8 @@ export async function getAllImages(text, page, perPage) {
 	return responseJson;
 }
 
+export async function getFavorites() {
+	const response = await axios(`/images`);
+	return response;
+}
 
-// export async function getAllImages(text) {
-// 	console.log(text);
-// 	const response = await axios(`/image/search${text}`);
-// 	const responseJson = await response.json();
-// 	console.log(responseJson);
-// 	return responseJson;
-// }
-export default {
-	getAllImages,
-};
