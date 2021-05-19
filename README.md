@@ -55,8 +55,6 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
 * **Sosa Juan Segundo** - *Trabajo Inicial* - [juanse1998](https://github.com/Juanse1998)
 
 
