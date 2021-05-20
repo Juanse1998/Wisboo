@@ -10,6 +10,8 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 _Primero debere clonar el repositorio en su computadora.
 
+_Luego debera crear una base de datos en postgres con el nombre wisboo_
+
 _Luego en la carpeta raiz del proyecto crear un archivo .env, y remplazar las variables con las suyas_
 
 ```
