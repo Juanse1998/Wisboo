@@ -8,11 +8,11 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 
 ### Instalación 🔧
 
-_Primero debere clonar el repositorio en su computadora.
+_1° debera clonar el repositorio en su computadora.
 
-_Luego debera crear una base de datos en postgres con el nombre wisboo_
+_2° debera crear una base de datos en postgres con el nombre wisboo_
 
-_Luego en la carpeta raiz del proyecto crear un archivo .env, y remplazar las variables con las suyas_
+_3° Luego en la carpeta raiz del proyecto crear un archivo .env, y remplazar las variables con las suyas_
 
 ```
 DB_USER="DB_USER"
@@ -20,13 +20,13 @@ DB_PASSWORD="PASSWORD"
 DB_HOST="HOST"
 ```
 
-_Luego ingresar a la carpeta api y ejecutar el siguiente comando:_
+_4° debera ingresar a la carpeta api y ejecutar el siguiente comando:_
 
 ```
 npm install
 ```
 
-_Luego debera ingresar a la carpeta client y ejecutar el siguiente comando:_
+_5° debera ingresar a la carpeta client y ejecutar el siguiente comando:_
 
 ```
 npm install
